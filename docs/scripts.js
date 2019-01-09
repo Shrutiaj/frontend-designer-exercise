@@ -47,7 +47,7 @@ var app = new Vue({
       ]
     },
     mounted: function() {
-        axios.get("./data.json").then(response =>{
+        axios.get("data.json").then(response =>{
             this.people = response;
             console/log(response);
         })
