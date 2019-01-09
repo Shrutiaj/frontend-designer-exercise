@@ -17,8 +17,12 @@ var app = new Vue({
 
     },
     filters: {
-
-    }
+        moment: function (date) {
+          if(date){
+            return moment("2015-11-08T05:50:47+0600").format('MMM Do YYYY [at] h:mm:ss a');
+          }
+        }
+      }
   });
 
 

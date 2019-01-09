@@ -128,18 +128,18 @@
         <!-- Task 2 -->
         <div id="app">
             <h2>{{message}}</h2>
-            <table>
+            <table class="table">
               <thead>
                 <tr>
-                  <td>#</td>
-                  <td>First</td>
-                  <td>Last</td>
-                  <td>Age</td>
-                  <td>Gender</td>
-                  <td>Company</td>
-                  <td>Email</td>
-                  <td>Registered</td>
-                  <td>Balance</td>
+                  <th>#</th>
+                  <th>First</th>
+                  <th>Last</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Company</th>
+                  <th>Email</th>
+                  <th>Registered</th>
+                  <th>Balance</th>
                 </tr>
               </thead>
               <tbody>
@@ -151,8 +151,9 @@
                   <td>{{person.gender}}</td>
                   <td>{{person.company}}</td>
                   <td>{{person.email}}</td>
-                  <td>{{person.registered}}</td>
-                  <td>{{person.balance}}</td>
+                  <td>{{person.registered | moment}}</td>
+                  <td v-if="person.balance > 3000" class="danger">{{person.balance}}</td>
+                  <td v-else class="success">{{person.balance}}</td>
                 </tr>
               </tbody>
             </table>

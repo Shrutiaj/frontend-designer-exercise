@@ -1,1 +1,10 @@
 /* Add Your Additional CSS */
+#app{
+    font-size: 0.8em;
+}
+.danger{
+    background-color: red;
+}
+.success{
+    background-color: green;
+}
