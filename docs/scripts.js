@@ -21,6 +21,9 @@ var app = new Vue({
           if(date){
             return moment("2015-11-08T05:50:47+0600").format('MMM Do YYYY [at] h:mm:ss a');
           }
+        },
+        currency: function(curr){
+            return numeral(curr).format('$0,0.00');
         }
       }
   });

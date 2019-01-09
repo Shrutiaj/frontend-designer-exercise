@@ -152,8 +152,8 @@
                   <td>{{person.company}}</td>
                   <td>{{person.email}}</td>
                   <td>{{person.registered | moment}}</td>
-                  <td v-if="person.balance > 3000" class="danger">{{person.balance}}</td>
-                  <td v-else class="success">{{person.balance}}</td>
+                  <td v-if="person.balance > 3000" class="danger">{{person.balance | currency}}</td>
+                  <td v-else class="success">{{person.balance | currency}}</td>
                 </tr>
               </tbody>
             </table>
