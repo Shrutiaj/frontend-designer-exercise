@@ -1,10 +1,15 @@
 // Add your Vue.js code
 console.log('start script.js');
 
+Vue.component('people-list',{
+    template:"",
+    props:['people']
+})
+
 var app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue!',
+      message: 'Task 2',
       people: [
         {
             "_id": "5abe8a29cfc50fb9180f7f01",
@@ -42,7 +47,10 @@ var app = new Vue({
       ]
     },
     mounted: function() {
-
+        axios.get("./data.json").then(response =>{
+            this.people = response;
+            console/log(response);
+        })
     },
     methods: {
 
@@ -50,4 +58,6 @@ var app = new Vue({
     filters: {
 
     }
-  })
+  });
+
+
