@@ -15,6 +15,7 @@ var app = new Vue({
     methods: {
         sortArray: function(){
             this.people.sort(function(a, b){
+                console.log("Calling sort...");
                 var lnameA = a.lname.toUpperCase();
                 var lnameB = b.lname.toUpperCase();
 
