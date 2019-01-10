@@ -10,7 +10,6 @@ var app = new Vue({
     mounted: function() {
         axios.get("data.json").then(response =>{
             this.people = response.data;
-            console.log(this.people);
         })
     },
     methods: {
@@ -30,6 +29,9 @@ var app = new Vue({
                 }
             })
         }
+    },
+    beforeMount: function(){
+        this.sortArray();
     },
     filters: {
         moment: function (date) {
