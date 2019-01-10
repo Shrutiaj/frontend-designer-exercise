@@ -30,7 +30,7 @@ var app = new Vue({
             })
         }
     },
-    beforeMount: function(){
+    created: function(){
         this.sortArray();
     },
     filters: {
