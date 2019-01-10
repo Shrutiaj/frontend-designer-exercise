@@ -10,7 +10,8 @@ var app = new Vue({
     mounted: function() {
         axios.get("data.json").then(response =>{
             this.people = response.data;
-        })
+        }),
+        this.sortArray();
     },
     methods: {
         sortArray: function(){
@@ -31,7 +32,7 @@ var app = new Vue({
         }
     },
     beforeUpdate: function(){
-        this.sortArray();
+        
     },
     filters: {
         moment: function (date) {
