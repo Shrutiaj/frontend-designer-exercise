@@ -14,7 +14,22 @@ var app = new Vue({
         })
     },
     methods: {
+        sortArray: function(){
+            this.people.sort(function(a, b){
+                var lnameA = a.lname.toUpperCase();
+                var lnameB = b.lname.toUpperCase();
 
+                if(lnameA < lnameB){
+                    return -1;
+                }
+                else if(lnameA > lnameB){
+                    return 1
+                }
+                else {
+                    return 0;
+                }
+            })
+        }
     },
     filters: {
         moment: function (date) {
