@@ -31,9 +31,6 @@ var app = new Vue({
             })
         }
     },
-    beforeUpdate: function(){
-        
-    },
     filters: {
         moment: function (date) {
           if(date){
