@@ -145,12 +145,12 @@
         <!-- Task 2 -->
         <div id="app">
             <h2>{{message}}</h2>
-            <table class="table">
+            <table class="table"> <!--Table displaying user information-->
               <thead>
                 <tr>
                   <th>#</th>
                   <th>First</th>
-                  <th v-on:click="sortArray" class="link">Last</th>
+                  <th v-on:click="sortArray" class="link">Last</th><!--Link to sort the table contents based on last name-->
                   <th>Age</th>
                   <th>Gender</th>
                   <th>Company</th>
@@ -160,7 +160,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(person, index) in people">
+                <tr v-for="(person, index) in people"><!--Iterating over the people[] array to extract each user's information-->
                   <td>{{++index}}</td>
                   <td>{{person.fname}}</td>
                   <td>{{person.lname}}</td>
@@ -172,7 +172,7 @@
                   <!--<td v-if="person.balance > 3000" class="bg-danger">{{person.balance | currency}}</td>
                   <td v-else-if="person.balance < 2000" class="bg-success">{{person.balance | currency}}</td>
                   <td v-else>{{person.balance | currency}}</td>-->
-                  <td v-bind:class="{ 'bg-success': person.balance < 2000, 'bg-danger': person.balance > 3000 }">{{person.balance | currency}}</td>
+                  <td v-bind:class="{ 'bg-success': person.balance < 2000, 'bg-danger': person.balance > 3000 }">{{person.balance | currency}}</td><!--Logic to add specific class to the cell based on user's balance-->
                 </tr>
               </tbody>
             </table>
