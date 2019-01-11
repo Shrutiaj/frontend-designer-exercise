@@ -8,12 +8,13 @@ var app = new Vue({
       people: []
     },
     mounted: function() {
-        axios.get("data.json").then(response =>{
-            this.people = response.data;
+        axios.get("data.json").then(response =>{ // Pulling JSON data using axios
+            this.people = response.data; // Assigning the JSON response to the people[] array in data
         }),
         this.sortArray();
     },
     methods: {
+        //method to sort people in the list based on last name
         sortArray: function(){
             this.people.sort(function(a, b){
                 var lnameA = a.lname.toUpperCase();
@@ -32,11 +33,13 @@ var app = new Vue({
         }
     },
     filters: {
+        // Filter to format date using MomentJS
         moment: function (date) {
           if(date){
             return moment("2015-11-08T05:50:47+0600").format('MMM Do YYYY [at] h:mm:ss a');
           }
         },
+        // Filter to format currency using NumeralJS
         currency: function(curr){
             return numeral(curr).format('$0,0.00');
         }
